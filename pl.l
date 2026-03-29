@@ -1,3 +1,5 @@
+/* Componente da equipe: Luiz Felipe Santos Lopes */
+
 %{
 #include <stdio.h>
 #include "tokens.hpp"
