@@ -2,6 +2,7 @@ enum{
     LP = 40,
     RP = 41,
     OP = 42,
+    V = 44,
     EQUAL = 61,
     IF = 256,
     THEN,
