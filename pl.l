@@ -43,7 +43,7 @@ real         return FLOAT;
 ")"          return RP;
 ","          return V;
 
-.            printf("Erro\n");
+.            return 255;
 %%
 
 int yywrap(){return 1;}
@@ -59,6 +59,12 @@ int main(){
     fprintf(saida, "%d: ", linha);
     do{
         res = yylex();
+        if (res == 255){
+            saida = freopen("tokens.txt", "w", saida);
+            fprintf(saida, "ERRO NA ANÁLISE!");
+            return 0;
+        }
+
         if(linha_atual < linha){
             linha_atual++;
             fprintf(saida, "\n");
